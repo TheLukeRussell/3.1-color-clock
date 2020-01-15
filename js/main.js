@@ -54,19 +54,44 @@
 
 //**********************PRACTICE***********************
 
-(function () {
-  'use strict';
-
-
-  let currentTime = () => {
-    currentTime = new Date();
-
-    console.log(currentTime);
-  };
-
-
-  setInterval(currentTime, 1000);
+function startTime() {
 
 
 
-})();
+  // let date = () => {
+    let date = new Date();
+    // console.log(date);
+
+    let hr = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
+
+    min = checkTime(min);
+    sec = checkTime(sec);
+
+  let $time = document.querySelector('#clock').textContent =
+
+   `${hr}:${min}:${sec}`;
+
+let time = setTimeout(function(){startTime()});
+}
+
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+// setInterval(date, 1000);
+
+// identified html element to target clock //
+// let $time
+// = document.querySelector('.time')
+// console.log($time);
+// **************************************** //
+
+// $time.textContent = ('date');
+
+
+startTime();
