@@ -53,8 +53,28 @@
 // })();
 
 //**********************PRACTICE***********************
+(function(){
+  'use strict';
 
-function startTime() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function startTime()
+{
 
     let date = new Date();
 
@@ -68,7 +88,6 @@ function startTime() {
   document.querySelector('#clock').textContent =
   hr + ":" + min + ":" + sec;
    // `${hr}:${min}:${sec}`;
-   let time = setTimeout (startTime(), 1000);
 }
 
 function checkTime(i) {
@@ -78,15 +97,14 @@ function checkTime(i) {
     return i;
 }
 
-// setInterval(date, 1000);
+setInterval (startTime, 1000);
 
 // identified html element to target clock //
 // let $time
-// = document.querySelector('.time')
+// = document.querySelector('#clock')
 // console.log($time);
 // **************************************** //
 
-// $time.textContent = ('date');
 
-
-startTime();
+// startTime();
+}());
