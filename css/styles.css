@@ -1,0 +1,23 @@
+.container {
+  background-color: black;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 7%;
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+}
+.container .time {
+  font-size: 100px;
+  font-family: fantasy;
+  margin: 0% 20%;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  top: 40%;
+  border-bottom: 1pt solid white;
+}
+
+/*# sourceMappingURL=styles.css.map */

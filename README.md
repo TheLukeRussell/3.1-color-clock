@@ -23,11 +23,13 @@ A repo containing at least:
 <img src="./images/color-clock-img.gif" alt="color clock"/>
 
 ## I'm a Web Developer Mode
+
 **GETTING STARTED**
 * Create a new repository
 * Create and commit index.html
 * Add initial HTML
 * Create site content and structure using HTML
+
 **MAKE IT TICK**
 * Create and commit a new file called main.js
 * console.log the current time on page load
