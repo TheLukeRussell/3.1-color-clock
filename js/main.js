@@ -56,11 +56,7 @@
 
 function startTime() {
 
-
-
-  // let date = () => {
     let date = new Date();
-    // console.log(date);
 
     let hr = date.getHours();
     let min = date.getMinutes();
@@ -69,11 +65,10 @@ function startTime() {
     min = checkTime(min);
     sec = checkTime(sec);
 
-  let $time = document.querySelector('#clock').textContent =
-
-   `${hr}:${min}:${sec}`;
-
-let time = setTimeout(function(){startTime()});
+  document.querySelector('#clock').textContent =
+  hr + ":" + min + ":" + sec;
+   // `${hr}:${min}:${sec}`;
+   let time = setTimeout (startTime(), 1000);
 }
 
 function checkTime(i) {
