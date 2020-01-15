@@ -57,22 +57,6 @@
   'use strict';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function startTime()
 {
 
@@ -98,6 +82,15 @@ function checkTime(i) {
 }
 
 setInterval (startTime, 1000);
+
+function timeConvert(n) {
+let num = n;
+let hours = (num / 60)
+
+
+}
+
+
 
 // identified html element to target clock //
 // let $time

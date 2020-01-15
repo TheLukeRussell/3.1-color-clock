@@ -18,5 +18,14 @@
   position: relative;
   top: 40%;
 }
+.container #underline {
+  height: 1px;
+  width: 100px;
+  background-color: white;
+  position: absolute;
+  left: 42%;
+  right: 0;
+  top: 60%;
+}
 
 /*# sourceMappingURL=styles.css.map */
