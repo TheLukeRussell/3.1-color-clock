@@ -24,7 +24,7 @@ body {
 }
 .container #underline {
   height: 1px;
-  width: 200px;
+  width: 5%;
   background-color: white;
   position: absolute;
   left: 50%;
@@ -35,6 +35,10 @@ body {
 .color {
   font-size: 3em;
   color: white;
+}
+
+#clock:hover {
+  color: blue;
 }
 
 /*# sourceMappingURL=styles.css.map */

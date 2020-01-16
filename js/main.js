@@ -73,6 +73,7 @@ function startTime()
 
   document.querySelector('#clock').textContent =
   hr + ":" + min + ":" + sec;
+    // document.addEventListener(mouseover, function startTime(){document.quertSelector('#clock').textContent = '#' + hr + min + sec;});
    // `${hr}:${min}:${sec}`;
 }
 
@@ -110,6 +111,8 @@ function changeColor()
 
     document.querySelector('.container').style.backgroundColor = '#' + hr + min + sec;
 
+
+
     function checkTime(t) {
         if (t < 10) {
             t = "0" + t;
@@ -133,12 +136,6 @@ function timeBar() {
 
 document.querySelector('#underline').style.width = sec;
 
-function checkTime(t) {
-    if (t < 10) {
-        t = "0" + t;
-    }
-    return t;
-}
     }
 
 
