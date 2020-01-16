@@ -123,6 +123,27 @@ changeColor();
 setInterval(changeColor, 1000);
 
 
+function timeBar() {
+  let date = new Date();
+
+  let sec = date.getSeconds();
+  sec = checkTime(sec);
+
+  // let timeBar = (sec/60);
+
+document.querySelector('#underline').style.width = sec;
+
+function checkTime(t) {
+    if (t < 10) {
+        t = "0" + t;
+    }
+    return t;
+}
+    }
+
+
+timeBar();
+setInterval(timeBar, 1000);
 
 // identified html element to target clock //
 // let $time

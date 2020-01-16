@@ -24,7 +24,7 @@ body {
 }
 .container #underline {
   height: 1px;
-  width: 1px;
+  width: 200px;
   background-color: white;
   position: absolute;
   left: 50%;
