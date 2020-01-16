@@ -96,6 +96,7 @@ function changeColor()
     hr = checkTime(hr);
     min = checkTime(min);
     sec = checkTime(sec);
+
 //*****watching to see if color still changes**
     document.querySelector('.color').textContent = '#' + hr + min + sec;
 //*********************************************
