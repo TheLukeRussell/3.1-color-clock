@@ -76,7 +76,16 @@ function startTime()
   hr + ":" + min + ":" + sec;
 
   //*****watching to see if color still changes**
-      document.querySelector('.color').textContent = '#' + hr + min + sec;
+  let clock = document.querySelector('#clock');
+
+  clock.onmouseover = logMouseOver;
+  function logMouseOver() {
+    clock.textContent = '#' + hr + min + sec;
+  }
+
+
+
+document.querySelector('.color').textContent = '#' + hr + min + sec;
   //*********************************************
     // document.addEventListener(mouseover, function startTime(){document.quertSelector('#clock').textContent = '#' + hr + min + sec;});
    // `${hr}:${min}:${sec}`;
@@ -131,21 +140,21 @@ setInterval (startTime, 1000);
 // setInterval(changeColor, 1000);
 
 
-function timeBar() {
-  let date = new Date();
-
-  let sec = date.getSeconds();
-  sec = checkTime(sec);
-
-  // let timeBar = (sec/60);
-
-document.querySelector('#underline').style.width = sec;
-
-    }
-
-
-timeBar();
-setInterval(timeBar, 1000);
+// function timeBar() {
+//   let date = new Date();
+//
+//   let sec = date.getSeconds();
+//   sec = checkTime(sec);
+//
+//   // let timeBar = (sec/60);
+//
+// document.querySelector('#underline').style.width = sec;
+//
+//     }
+//
+//
+// timeBar();
+// setInterval(timeBar, 1000);
 
 // identified html element to target clock //
 // let $time
