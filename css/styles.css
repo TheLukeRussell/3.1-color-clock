@@ -1,3 +1,7 @@
+body {
+  background-color: #222;
+}
+
 .container {
   background-color: black;
   position: absolute;
@@ -20,12 +24,17 @@
 }
 .container #underline {
   height: 1px;
-  width: 100px;
+  width: 1px;
   background-color: white;
   position: absolute;
-  left: 42%;
+  left: 50%;
   right: 0;
   top: 60%;
+}
+
+.color {
+  font-size: 3em;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

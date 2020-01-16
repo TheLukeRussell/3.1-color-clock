@@ -56,16 +56,18 @@
 (function(){
   'use strict';
 
+  const container = document.querySelector('.container');
+  const color = document.querySelector('.color');
+  const clock = document.querySelector('#clock');
 
 function startTime()
 {
-
     let date = new Date();
-
     let hr = date.getHours();
     let min = date.getMinutes();
     let sec = date.getSeconds();
 
+    hr = checkTime(hr);
     min = checkTime(min);
     sec = checkTime(sec);
 
@@ -74,21 +76,50 @@ function startTime()
    // `${hr}:${min}:${sec}`;
 }
 
-function checkTime(i) {
-    if (i < 10) {
-        i = "0" + i;
+function checkTime(t) {
+    if (t < 10) {
+        t = "0" + t;
     }
-    return i;
+    return t;
 }
 
+startTime();
 setInterval (startTime, 1000);
 
-function timeConvert(n) {
-let num = n;
-let hours = (num / 60)
+function changeColor()
+{
+    let date = new Date();
+    let hr = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
 
+    hr = checkTime(hr);
+    min = checkTime(min);
+    sec = checkTime(sec);
+//*****watching to see if color still changes**
+    document.querySelector('.color').textContent = '#' + hr + min + sec;
+//*********************************************
+    // let clock = document.querySelector('#clock')
+
+    // clock.addEventListener("mouseout" function()){
+    //   clock.clockContent = '.color'
+    // })
+    // clock.addEventListener("mouseover" function()){
+    //   clock.clockContent = '.color'
+
+    document.querySelector('.container').style.backgroundColor = '#' + hr + min + sec;
+
+    function checkTime(t) {
+        if (t < 10) {
+            t = "0" + t;
+        }
+        return t;
+    }
 
 }
+
+changeColor();
+setInterval(changeColor, 1000);
 
 
 
@@ -98,6 +129,4 @@ let hours = (num / 60)
 // console.log($time);
 // **************************************** //
 
-
-// startTime();
 }());
