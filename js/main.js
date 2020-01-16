@@ -71,8 +71,13 @@ function startTime()
     min = checkTime(min);
     sec = checkTime(sec);
 
+  document.querySelector('.container').style.backgroundColor = '#' + hr + min + sec;
   document.querySelector('#clock').textContent =
   hr + ":" + min + ":" + sec;
+
+  //*****watching to see if color still changes**
+      document.querySelector('.color').textContent = '#' + hr + min + sec;
+  //*********************************************
     // document.addEventListener(mouseover, function startTime(){document.quertSelector('#clock').textContent = '#' + hr + min + sec;});
    // `${hr}:${min}:${sec}`;
 }
@@ -87,19 +92,19 @@ function checkTime(t) {
 startTime();
 setInterval (startTime, 1000);
 
-function changeColor()
-{
-    let date = new Date();
-    let hr = date.getHours();
-    let min = date.getMinutes();
-    let sec = date.getSeconds();
-
-    hr = checkTime(hr);
-    min = checkTime(min);
-    sec = checkTime(sec);
+// function changeColor()
+// {
+//     let date = new Date();
+//     let hr = date.getHours();
+//     let min = date.getMinutes();
+//     let sec = date.getSeconds();
+//
+//     hr = checkTime(hr);
+//     min = checkTime(min);
+//     sec = checkTime(sec);
 
 //*****watching to see if color still changes**
-    document.querySelector('.color').textContent = '#' + hr + min + sec;
+    // document.querySelector('.color').textContent = '#' + hr + min + sec;
 //*********************************************
     // let clock = document.querySelector('#clock')
 
@@ -109,21 +114,21 @@ function changeColor()
     // clock.addEventListener("mouseover" function()){
     //   clock.clockContent = '.color'
 
-    document.querySelector('.container').style.backgroundColor = '#' + hr + min + sec;
-
-
-
-    function checkTime(t) {
-        if (t < 10) {
-            t = "0" + t;
-        }
-        return t;
-    }
-
-}
-
-changeColor();
-setInterval(changeColor, 1000);
+//     document.querySelector('.container').style.backgroundColor = '#' + hr + min + sec;
+//
+//
+//
+//     function checkTime(t) {
+//         if (t < 10) {
+//             t = "0" + t;
+//         }
+//         return t;
+//     }
+//
+// }
+//
+// changeColor();
+// setInterval(changeColor, 1000);
 
 
 function timeBar() {
