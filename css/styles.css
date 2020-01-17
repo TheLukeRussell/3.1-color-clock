@@ -22,19 +22,23 @@ body {
   position: relative;
   top: 40%;
 }
-.container #underline {
-  height: 1px;
-  width: 1%;
-  background-color: white;
-  position: absolute;
-  left: 50%;
-  right: 0;
-  top: 60%;
-}
 
 .color {
   font-size: 3em;
   color: white;
+}
+
+#underline {
+  height: 15px;
+  width: 30px;
+  position: absolute;
+  left: 31%;
+  right: 0;
+  top: 60%;
+}
+
+progress {
+  color: inherit;
 }
 
 /*# sourceMappingURL=styles.css.map */
