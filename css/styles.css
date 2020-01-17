@@ -29,16 +29,15 @@ body {
 }
 
 #underline {
-  height: 15px;
-  width: 30px;
+  height: 10px;
+  width: 100px;
   position: absolute;
-  left: 31%;
+  background-color: inherit;
+  border: 3pt white solid;
+  border-radius: 100px;
+  left: 19%;
   right: 0;
   top: 60%;
-}
-
-progress {
-  color: inherit;
 }
 
 /*# sourceMappingURL=styles.css.map */

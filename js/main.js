@@ -86,17 +86,22 @@
     //*********************************************
     // document.addEventListener(mouseover, function startTime(){document.quertSelector('#clock').textContent = '#' + hr + min + sec;});
     // `${hr}:${min}:${sec}`;
-let underline = document.querySelector('#underline')
-
-    let percentage  = ((sec) * 5);
-
-    let width = (percentage);
-
-
-
-    // let barWidth = (percentage * 100).toString();
-    underline.style.width = (`${width}px`);
-  }
+// let underline = document.querySelector('#underline')
+//
+//     let percentage  = ((sec) * 5);
+//
+//     let width = (percentage);
+//
+//
+//
+//     // let barWidth = (percentage * 100).toString();
+//     underline.style.width = (`${width}px`);
+//
+  let timeBar = (sec/60);
+  let width = timeBar * 500;
+  let pixelWidth = width + "px"
+  document.querySelector('#underline').style.width = pixelWidth
+}
 
   function checkTime(t) {
     if (t < 10) {
