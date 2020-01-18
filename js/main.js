@@ -61,7 +61,11 @@
 
 
   // mouseover change isHovering to true
+if (isHovering == true) {
 
+} else {
+
+}
 
   // mouseout change isHovering to false
 
@@ -80,33 +84,41 @@
     min = checkTime(min);
     sec = checkTime(sec);
 
-    // if (isHovering === true) {
-      // work on generating a hexcode using toString(16)
-      $clock.textContent = (`#${hr}${min}${sec}`);
-    // } else {
-      $clock.textContent =(`${hr}:${min}:${sec}`);
-    // }
-
-// changes backgrund color to hex code
+    // changes backgrund color to hex code
     let hex = (`${hr}${min}${sec}`);
-    let hexCode = Number(hex).toString(16).slice(-3);
+    let hexCode = Number(hex).toString(16).slice(-4);
     $container.style.backgroundColor = ('#' + hexCode);
 
+    // if (isHovering === true) {
+    // work on generating a hexcode using toString(16)
+    // $clock.textContent = (`#${hr}${min}${sec}`);
+    // } else {
+    $clock.textContent = (`${hr}:${min}:${sec}`);
+    // }
+
     //adds hover effect//
-    $clock.onmouseenter = logMouseEnter;
+    $clock.addEventListener("mouseover", function(event) {
+      event.target.textContent = (`${hexCode}`)
+    });
 
-    function logMouseEnter() {
-      $clock.textContent = '#' + hr + min + sec;
-    }
+    $clock.addEventListener("mouseout", function(event) {
+      event.target.textContent = $clock.textContent = (`${hr}:${min}:${sec}`);
+    });
 
-// timebar effect
+    // $clock.onmouseenter = logMouseEnter;
+    //
+    // function logMouseEnter() {
+    //   $clock.textContent = (`${hexCode}`);
+    // }
+
+    // timebar effect
     let timeBar = (sec / 60);
     let width = timeBar * 500;
     let pixelWidth = width + 'px'
     document.querySelector('#underline').style.width = pixelWidth
   }
 
-// statement to add '0' in front of number if its lower than 10
+  // statement to add '0' in front of number if its lower than 10
   function checkTime(t) {
     if (t < 10) {
       t = "0" + t;
@@ -114,7 +126,7 @@
     return t;
   }
 
-//recalling the function
+  //recalling the function
   startTime();
 
   setInterval(startTime, 1000);
