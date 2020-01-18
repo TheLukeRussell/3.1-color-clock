@@ -54,9 +54,21 @@
 (function() {
   'use strict';
 
-  const container = document.querySelector('.container');
-  const color = document.querySelector('.color');
-  const clock = document.querySelector('#clock');
+  const $container = document.querySelector('.container');
+  const $color = document.querySelector('.color');
+  const $clock = document.querySelector('.clock');
+  let isHovering = false;
+
+
+  // mouseover change isHovering to true
+
+
+  // mouseout change isHovering to false
+
+
+
+
+
 
   function startTime() {
     let date = new Date();
@@ -68,31 +80,33 @@
     min = checkTime(min);
     sec = checkTime(sec);
 
-    document.querySelector('.container').style.backgroundColor = '#' + hr + min + sec;
-    document.querySelector('#clock').textContent =
-      hr + ":" + min + ":" + sec;
+    // if (isHovering === true) {
+      // work on generating a hexcode using toString(16)
+      $clock.textContent = (`#${hr}${min}${sec}`);
+    // } else {
+      $clock.textContent =(`${hr}:${min}:${sec}`);
+    // }
 
-    let clock = document.querySelector('#clock');
+// changes backgrund color to hex code
+    let hex = (`${hr}${min}${sec}`);
+    let hexCode = Number(hex).toString(16).slice(-3);
+    $container.style.backgroundColor = ('#' + hexCode);
 
-    clock.onmouseover = logMouseOver;
+    //adds hover effect//
+    $clock.onmouseenter = logMouseEnter;
 
-    function logMouseOver() {
-      clock.textContent = '#' + hr + min + sec;
+    function logMouseEnter() {
+      $clock.textContent = '#' + hr + min + sec;
     }
 
+// timebar effect
+    let timeBar = (sec / 60);
+    let width = timeBar * 500;
+    let pixelWidth = width + 'px'
+    document.querySelector('#underline').style.width = pixelWidth
+  }
 
-  // *****watching to see if color still changes**
-    // document.querySelector('.color').textContent = '#' + hr + min + sec;
-    //*********************************************
-    // document.addEventListener(mouseover, function startTime(){document.quertSelector('#clock').textContent = '#' + hr + min + sec;});
-    // `${hr}:${min}:${sec}`;
-
-  let timeBar = (sec/60);
-  let width = timeBar * 500;
-  let pixelWidth = width + "px"
-  document.querySelector('#underline').style.width = pixelWidth
-}
-
+// statement to add '0' in front of number if its lower than 10
   function checkTime(t) {
     if (t < 10) {
       t = "0" + t;
@@ -100,18 +114,8 @@
     return t;
   }
 
+//recalling the function
   startTime();
+
   setInterval(startTime, 1000);
-
-  //*****watching to see if color still changes**
-  // document.querySelector('.color').textContent = '#' + hr + min + sec;
-  //*********************************************
-
-
-  // identified html element to target clock //
-  // let $time
-  // = document.querySelector('#clock')
-  // console.log($time);
-  // **************************************** //
-
 }());

@@ -12,7 +12,7 @@ body {
   height: 800px;
   margin: 0 auto;
 }
-.container #clock {
+.container .clock {
   font-size: 100px;
   font-family: fantasy;
   margin: 0% 20%;
