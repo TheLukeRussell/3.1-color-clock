@@ -1,5 +1,6 @@
 body {
-  background-color: #222;
+  background-color: #white;
+  transition: background-color ease 3s;
 }
 
 .container {
@@ -30,7 +31,7 @@ body {
   width: 100px;
   position: absolute;
   background-color: inherit;
-  transition: background-color ease 3s;
+  transition: background-color ease 3s, width linear 1s;
   border: 0pt white solid;
   border-radius: 100px;
   left: 17%;

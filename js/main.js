@@ -51,15 +51,16 @@
 // })();
 
 //**********************PRACTICE***********************
-(function() {
+(function () {
   'use strict';
 
   const $container = document.querySelector('.container');
   const $clock = document.querySelector('.clock');
   let isHovering = false;
-  const $underline = document. querySelector('#underline')
+  const $underline = document.querySelector('#underline');
+  const $body = document.querySelector('body');
 
-//function to display current time
+  //function to display current time
   function startTime() {
     let date = new Date();
     let hr = date.getHours();
@@ -75,36 +76,43 @@
     let hexCode = ('0' + Number(hr).toString(16)).slice(-2) + ('0' + Number(min).toString(16)).slice(-2) + ('0' + Number(sec).toString(16)).slice(-2);
     let time = $clock.textContent = (`${hr}:${min}:${sec}`);
 
-      // changes color of background, line, and numbers to hex code
+    // changes color of body, background, line, and numbers to hex code
     $container.style.backgroundColor = ('#' + hexCode);
     $underline.style.backgroundColor = ('#' + (Number(hex).toString(16)).slice(-3) + (Number(hex).toString(16)).slice(-3));
     $clock.style.color = ('#' + (Number(hex).toString(16)).slice(-3) + (Number(hex).toString(16)).slice(-3));
+    $body.style.backgroundColor = ('#' + (Number(hex).toString(16)).slice(-3) + (Number(hex).toString(16)).slice(-3));
 
     //adds hover effect//
     if (isHovering === false) {
       $clock.textContent = time;
     } else {
-      $clock.textContent = ("#" + hexCode);
+      $clock.textContent = ('#' + hexCode);
     }
 
-    $clock.addEventListener("mouseenter", function(){isHovering = true});
-    $clock.addEventListener("mouseout", function(){isHovering = false});
-    
+    $clock.addEventListener('mouseenter', function () {
+      isHovering = true;
+    });
+
+    $clock.addEventListener('mouseout', function () {
+      isHovering = false;
+    });
+
     // transforms hexcode to uppercase
-    $clock.style.textTransform = "uppercase";
+    $clock.style.textTransform = 'uppercase';
 
     // timebar effect
     let timeBar = (sec / 60);
     let width = timeBar * 500;
-    let pixelWidth = width + 'px'
-    document.querySelector('#underline').style.width = pixelWidth
+    let pixelWidth = width + 'px';
+    document.querySelector('#underline').style.width = pixelWidth;
   }
 
   // statement to add '0' in front of number if its lower than 10
   function checkTime(t) {
     if (t < 10) {
-      t = "0" + t;
+      t = '0' + t;
     }
+
     return t;
   }
 
