@@ -12,7 +12,7 @@ body {
   top: 7%;
   width: 800px;
   height: 800px;
-  margin: 0 auto;
+  margin: auto;
 }
 .container .clock {
   font-size: 100px;
@@ -34,7 +34,7 @@ body {
   transition: background-color ease 3s, width linear 1s;
   border: 0pt white solid;
   border-radius: 100px;
-  left: 17%;
+  left: 19%;
   right: 0;
   top: 60%;
 }
