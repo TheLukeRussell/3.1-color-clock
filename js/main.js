@@ -61,11 +61,7 @@
 
 
   // mouseover change isHovering to true
-if (isHovering == true) {
 
-} else {
-
-}
 
   // mouseout change isHovering to false
 
@@ -85,31 +81,21 @@ if (isHovering == true) {
     sec = checkTime(sec);
 
     // changes backgrund color to hex code
-    let hex = (`${hr}${min}${sec}`);
-    let hexCode = Number(hex).toString(16).slice(-4);
+    let hex = (`${min}${sec}${min}`);
+    let hexCode = (Number(hex).toString(16)).slice(-3) + (Number(hex).toString(16)).slice(-3);
+    let time = $clock.textContent = (`${hr}:${min}:${sec}`);
     $container.style.backgroundColor = ('#' + hexCode);
 
-    // if (isHovering === true) {
-    // work on generating a hexcode using toString(16)
-    // $clock.textContent = (`#${hr}${min}${sec}`);
-    // } else {
-    $clock.textContent = (`${hr}:${min}:${sec}`);
-    // }
-
     //adds hover effect//
-    $clock.addEventListener("mouseover", function(event) {
-      event.target.textContent = (`${hexCode}`)
-    });
 
-    $clock.addEventListener("mouseout", function(event) {
-      event.target.textContent = $clock.textContent = (`${hr}:${min}:${sec}`);
-    });
+    if (isHovering === false){
+        $clock.textContent = time;                   //assigns the time to the content of clock in our HTML
+      }else{
+        $clock.textContent = hexCode;
+      }
 
-    // $clock.onmouseenter = logMouseEnter;
-    //
-    // function logMouseEnter() {
-    //   $clock.textContent = (`${hexCode}`);
-    // }
+      $clock.addEventListener("mouseover", function(){isHovering = true});
+      $clock.addEventListener("mouseout", function(){isHovering = false});
 
     // timebar effect
     let timeBar = (sec / 60);
@@ -129,5 +115,5 @@ if (isHovering == true) {
   //recalling the function
   startTime();
 
-  setInterval(startTime, 1000);
+  setInterval(startTime, 50);
 }());
