@@ -55,21 +55,11 @@
   'use strict';
 
   const $container = document.querySelector('.container');
-  const $color = document.querySelector('.color');
   const $clock = document.querySelector('.clock');
   let isHovering = false;
+  const $underline = document. querySelector('#underline')
 
-
-  // mouseover change isHovering to true
-
-
-  // mouseout change isHovering to false
-
-
-
-
-
-
+//function to display current time
   function startTime() {
     let date = new Date();
     let hr = date.getHours();
@@ -80,22 +70,28 @@
     min = checkTime(min);
     sec = checkTime(sec);
 
-    // changes backgrund color to hex code
-    let hex = (`${min}${sec}${min}`);
-    let hexCode = (Number(hex).toString(16)).slice(-3) + (Number(hex).toString(16)).slice(-3);
+    // variables to change color of elements
+    let hex = (`${hr}${min}${sec}`);
+    let hexCode = ('0' + Number(hr).toString(16)).slice(-2) + ('0' + Number(min).toString(16)).slice(-2) + ('0' + Number(sec).toString(16)).slice(-2);
     let time = $clock.textContent = (`${hr}:${min}:${sec}`);
+
+      // changes color of background, line, and numbers to hex code
     $container.style.backgroundColor = ('#' + hexCode);
+    $underline.style.backgroundColor = ('#' + (Number(hex).toString(16)).slice(-3) + (Number(hex).toString(16)).slice(-3));
+    $clock.style.color = ('#' + (Number(hex).toString(16)).slice(-3) + (Number(hex).toString(16)).slice(-3));
 
     //adds hover effect//
+    if (isHovering === false) {
+      $clock.textContent = time;
+    } else {
+      $clock.textContent = ("#" + hexCode);
+    }
 
-    if (isHovering === false){
-        $clock.textContent = time;                   //assigns the time to the content of clock in our HTML
-      }else{
-        $clock.textContent = hexCode;
-      }
-
-      $clock.addEventListener("mouseover", function(){isHovering = true});
-      $clock.addEventListener("mouseout", function(){isHovering = false});
+    $clock.addEventListener("mouseenter", function(){isHovering = true});
+    $clock.addEventListener("mouseout", function(){isHovering = false});
+    
+    // transforms hexcode to uppercase
+    $clock.style.textTransform = "uppercase";
 
     // timebar effect
     let timeBar = (sec / 60);

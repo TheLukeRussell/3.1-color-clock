@@ -3,7 +3,8 @@ body {
 }
 
 .container {
-  background-color: black;
+  background-color: inherit;
+  transition: background-color ease 1s;
   position: absolute;
   left: 0;
   right: 0;
@@ -14,18 +15,14 @@ body {
 }
 .container .clock {
   font-size: 100px;
-  font-family: fantasy;
+  font-family: "Courier Prime", monospace;
   margin: 0% 20%;
-  color: white;
+  color: inherit;
+  transition: color ease 3s;
   text-align: center;
   vertical-align: middle;
   position: relative;
   top: 40%;
-}
-
-.color {
-  font-size: 3em;
-  color: white;
 }
 
 #underline {
@@ -33,7 +30,8 @@ body {
   width: 100px;
   position: absolute;
   background-color: inherit;
-  border: 3pt white solid;
+  transition: background-color ease 3s;
+  border: 0pt white solid;
   border-radius: 100px;
   left: 17%;
   right: 0;
